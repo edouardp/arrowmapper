@@ -2,7 +2,7 @@
 "
 
 function! arrowmapper#maps#spell#set_map()
-  map <D-Down> ]s
-  map <D-Up> [s
+  call arrowmapper#map_prev("normal [s")
+  call arrowmapper#map_next("normal ]s")
 endfunction
 

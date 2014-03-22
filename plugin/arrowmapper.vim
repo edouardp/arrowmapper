@@ -1,10 +1,23 @@
 " ArrowMap command
 "
 
+function! ArrowMapperNext()
+    execute g:arrowmapper_next_command
+    execute 'normal zz'
+endfunction
+
+
+function! ArrowMapperPrev()
+    execute g:arrowmapper_prev_command
+    execute 'normal zz'
+endfunction
+
+
 function! s:get_maps(a, l, p)
   let files = split(globpath(&rtp, 'autoload/arrowmapper/maps/'.a:a.'*'), "\n")
   return map(files, 'fnamemodify(v:val, ":t:r")')
 endfunction
+
 
 function! s:arrowmapper_setmap(...)
   if a:0
@@ -17,6 +30,7 @@ function! s:arrowmapper_setmap(...)
     echo g:arrowmapper_map
   endif
 endfunction
+
 
 command! -nargs=? -complete=customlist,<sid>get_maps ArrowMap call <sid>arrowmapper_setmap(<f-args>)
 

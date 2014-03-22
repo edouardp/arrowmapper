@@ -2,7 +2,7 @@
 "
 
 function! arrowmapper#maps#quickfix#set_map()
-  map <D-Down> :cnext<CR>
-  map <D-Up> :cprev<CR>
+  call arrowmapper#map_prev("cprev")
+  call arrowmapper#map_next("cnext")
 endfunction
 

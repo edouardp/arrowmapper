@@ -2,7 +2,7 @@
 "
 
 function! arrowmapper#maps#locationlist#set_map()
-  map <D-Down> :lnext<CR>
-  map <D-Up> :lprev<CR>
+  call arrowmapper#map_prev("lprev")
+  call arrowmapper#map_next("lnext")
 endfunction
 
