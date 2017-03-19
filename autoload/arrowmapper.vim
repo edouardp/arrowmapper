@@ -3,19 +3,27 @@
 
 
 function! arrowmapper#up_key()
-    if(has('mac'))
+    if has('mac')
         return "<D-Up>"
-    else
+    endif
+    if has('win32')
         return "<M-Up>"
+    end
+    if has('unix')
+        return "<T-Up>"
     end
 endfunction
 
 
 function! arrowmapper#down_key()
-    if(has('mac'))
+    if has('mac')
         return "<D-Down>"
-    else
+    endif
+    if has('win32')
         return "<M-Down>"
+    end
+    if has('unix')
+        return "<T-Down>"
     end
 endfunction
 
