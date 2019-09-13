@@ -75,3 +75,10 @@ command! ArrowMapCenteringOn call <sid>arrowmapper_set_centering_on()
 command! ArrowMapCenteringOff call <sid>arrowmapper_set_centering_off()
 command! ArrowMapCenteringToggle call <sid>arrowmapper_set_centering_toggle()
 
+
+
+" -- Set 'Arrowmap quickfix' post-grep ----------------------------------------
+"
+au QuickFixCmdPre grep :Arrowmap quickfix
+
+
